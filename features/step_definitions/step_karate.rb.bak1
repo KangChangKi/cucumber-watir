@@ -1,0 +1,25 @@
+#2 require 'watir-webdriver'
+
+Given(/^I navigate to Google$/) do
+  #1 pending # express the regexp above with the code you wish you had
+
+  #2 @browser = Watir::Browser.new :chrome
+  @browser.goto "http://www.google.com"
+end
+
+When(/^I enter Wado into the search field$/) do
+  #1 pending # express the regexp above with the code you wish you had
+  searchField = @browser.text_field(:name, 'q')
+  searchButton = @browser.button(:name, 'btnG')
+  searchField.set 'Wado'
+  #2 searchField.set 'Octivia'
+  searchButton.click
+end
+
+Then(/^the text Ohtsuka should be present$/) do
+  #1 pending # express the regexp above with the code you wish you had
+  @browser.div(:id => 'resultStats').wait_until_present
+  (@browser.text.include? 'Ohtsuka').should == true
+  #2 @browser.close
+end
+
