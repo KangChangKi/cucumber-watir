@@ -15,6 +15,10 @@ install cucumber, pry, watir-webdriver ruby gems.
 
 > gem install cucumber pry watir-webdriver
 
+* install chromedriver
+
+> brew install chromedriver
+
 ### commands
 
 * run all cucumber features
